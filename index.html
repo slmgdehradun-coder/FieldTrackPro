@@ -16,7 +16,7 @@
   --yellow:#d97706;--ybg:#fffbeb;--yb:#fcd34d;
   --red:#dc2626;--rbg:#fef2f2;--rb:#fca5a5;
   --purple:#7c3aed;--pbg:#f5f3ff;--pbd:#ddd6fe;
-  --sw:260px;--mw:430px;--r:11px;
+  --sw:220px;--mw:420px;--map-flex:1 1 auto;--r:11px;
   --sh:0 1px 3px rgba(15,23,42,.07),0 4px 14px rgba(15,23,42,.05)
 }
 body{font-family:'DM Sans',system-ui,sans-serif;background:var(--bg);color:var(--text);height:100vh;overflow:hidden;font-size:13px;font-weight:500;min-width:0}
@@ -43,7 +43,7 @@ body{font-family:'DM Sans',system-ui,sans-serif;background:var(--bg);color:var(-
 
 /* ─── APP ─── */
 #AS{display:none;flex-direction:column;height:100vh}
-header{height:50px;background:var(--white);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 16px;flex-shrink:0;box-shadow:0 1px 4px rgba(15,23,42,.05);z-index:100}
+header{height:48px;background:var(--white);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 16px;flex-shrink:0;box-shadow:0 1px 4px rgba(15,23,42,.05);z-index:100}
 .lg{display:flex;align-items:center;gap:8px;font-weight:700;font-size:15px}
 .lgi{width:30px;height:30px;background:var(--accent);border-radius:7px;display:flex;align-items:center;justify-content:center}
 .lgi svg{width:16px;height:16px;fill:white}
@@ -165,7 +165,7 @@ input[type=date].di:focus{border-color:var(--accent)}
 .empi{width:56px;height:56px;background:var(--surface);border:1px solid var(--border);border-radius:13px;display:flex;align-items:center;justify-content:center;margin:0 auto}
 
 /* ─── MAP ─── */
-.mp{width:var(--mw);flex-shrink:0;background:var(--white);border-left:1px solid var(--border);display:flex;flex-direction:column;overflow:hidden}
+.mp{flex:1 1 auto;min-width:300px;background:var(--white);border-left:1px solid var(--border);display:flex;flex-direction:column;overflow:hidden}
 .mh{padding:10px 13px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
 .mt{font-size:13px;font-weight:700;display:flex;align-items:center;gap:6px}
 .gb{display:inline-flex;align-items:center;gap:3px;border-radius:5px;padding:3px 7px;font-size:10px;font-weight:600}
@@ -288,7 +288,7 @@ input[type=date].di:focus{border-color:var(--accent)}
 .api-loading{background:var(--ybg);color:var(--yellow);border:1px solid var(--yb)}
 
 /* ─── USER INFO BAR ─── */
-.ubar{height:38px;background:linear-gradient(90deg,#1e3a5f,#1e40af);display:flex;align-items:center;justify-content:space-between;padding:0 16px;flex-shrink:0}
+.ubar{height:32px;background:linear-gradient(90deg,#1e3a5f,#1e40af);display:flex;align-items:center;justify-content:space-between;padding:0 16px;flex-shrink:0}
 .ubar-info{display:flex;align-items:center;gap:14px;font-size:12px;color:rgba(255,255,255,.85)}
 .ubar-name{font-weight:700;color:#fff}
 .ubar-sep{color:rgba(255,255,255,.3)}
@@ -299,12 +299,12 @@ input[type=date].di:focus{border-color:var(--accent)}
 
 /* ─── ODS SCREEN ─── */
 #odsScreen{position:fixed;inset:0;background:var(--bg);z-index:400;display:none;flex-direction:column}
-.ods-header{height:50px;background:var(--white);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 16px;flex-shrink:0;box-shadow:0 1px 4px rgba(15,23,42,.06)}
+.ods-header{height:48px;background:var(--white);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 16px;flex-shrink:0;box-shadow:0 1px 4px rgba(15,23,42,.06)}
 .ods-title{font-size:15px;font-weight:700;display:flex;align-items:center;gap:8px}
 .ods-title-badge{background:#7c3aed;color:#fff;font-size:10px;padding:2px 7px;border-radius:4px;font-weight:700;letter-spacing:.4px}
 .ods-body{display:flex;flex:1;overflow:hidden;min-height:0;min-width:0}
 /* ODS Sidebar */
-.ods-sb{width:220px;flex-shrink:0;background:var(--white);border-right:1px solid var(--border);display:flex;flex-direction:column;overflow:hidden}
+.ods-sb{width:210px;flex-shrink:0;background:var(--white);border-right:1px solid var(--border);display:flex;flex-direction:column;overflow:hidden}
 .ods-sbh{padding:10px 10px 8px;border-bottom:1px solid var(--border);flex-shrink:0}
 .ods-sb-title{font-size:11px;font-weight:700;color:var(--dim);text-transform:uppercase;letter-spacing:.7px;margin-bottom:8px;display:flex;align-items:center;justify-content:space-between}
 .ods-sb-cnt{font-size:11px;background:#f5f3ff;color:#7c3aed;padding:1px 6px;border-radius:9px;font-weight:700}
@@ -323,11 +323,11 @@ input[type=date].di:focus{border-color:var(--accent)}
 .oi-status{width:8px;height:8px;border-radius:50%;flex-shrink:0}
 .oi-verified{background:#059669}.oi-unverified{background:#d97706}.oi-blocked{background:#dc2626}
 /* ODS Detail */
-.ods-detail{flex:0 0 340px;min-width:280px;max-width:380px;overflow-y:auto;padding:12px;background:var(--bg);display:flex;flex-direction:column;gap:10px;resize:horizontal}
+.ods-detail{flex:0 0 420px;min-width:380px;max-width:460px;overflow-y:auto;padding:12px;background:var(--bg);display:flex;flex-direction:column;gap:10px}
 .ods-detail::-webkit-scrollbar{width:3px}
 .ods-detail::-webkit-scrollbar-thumb{background:var(--border);border-radius:2px}
 /* Outlet Photo */
-.ods-photo-wrap{width:100%;height:260px;background:#070e1a;border-radius:var(--r);overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:var(--sh)}
+.ods-photo-wrap{width:100%;height:240px;background:#070e1a;border-radius:var(--r);overflow:hidden;position:relative;display:flex;align-items:center;justify-content:center;cursor:pointer;box-shadow:var(--sh)}
 .ods-photo-wrap img{width:100%;height:100%;object-fit:cover;display:block;transition:opacity .2s}
 .ods-photo-wrap img:hover{opacity:.92}
 .ods-photo-ov{position:absolute;bottom:0;left:0;right:0;background:linear-gradient(transparent,rgba(0,0,0,.75));padding:10px 13px;display:flex;align-items:center;justify-content:space-between}
@@ -337,10 +337,10 @@ input[type=date].di:focus{border-color:var(--accent)}
 /* Outlet info card */
 .ods-info-card{background:var(--white);border:1px solid var(--border);border-radius:var(--r);box-shadow:var(--sh);overflow:hidden;margin-bottom:2px}
 .ods-info-head{padding:11px 15px;border-bottom:1px solid var(--border);display:flex;align-items:center;gap:7px;font-size:10px;font-weight:700;color:var(--muted);text-transform:uppercase;letter-spacing:.7px}
-.ods-info-body{padding:12px 15px}
-.ods-ir{display:flex;justify-content:space-between;align-items:flex-start;padding:8px 0;border-bottom:1px solid var(--border)}
+.ods-info-body{padding:13px 16px}
+.ods-ir{display:flex;justify-content:space-between;align-items:flex-start;padding:9px 0;border-bottom:1px solid var(--border)}
 .ods-ir:last-child{border-bottom:none}
-.ods-ik{font-size:12px;color:var(--muted);font-weight:600}
+.ods-ik{font-size:12px;color:var(--muted);font-weight:600;min-width:90px}
 .ods-iv{font-size:12px;font-weight:700;text-align:right;max-width:60%;word-break:break-word}
 .ods-iv.mo{font-family:'DM Mono',monospace}
 /* Status badges */
@@ -358,10 +358,10 @@ input[type=date].di:focus{border-color:var(--accent)}
 .ods-sc-val{font-size:20px;font-weight:700}
 .ods-sc-lbl{font-size:10px;color:var(--dim);margin-top:2px;text-transform:uppercase;letter-spacing:.4px}
 /* ODS Map */
-.ods-map-panel{flex:1 1 50%;min-width:360px;max-width:62%;background:var(--white);border-left:1px solid var(--border);display:flex;flex-direction:column;overflow:hidden}
+.ods-map-panel{flex:1 1 auto;min-width:300px;background:var(--white);border-left:1px solid var(--border);display:flex;flex-direction:column;overflow:hidden}
 .ods-map-head{padding:10px 13px;border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;flex-shrink:0}
 .ods-map-title{font-size:13px;font-weight:700;display:flex;align-items:center;gap:6px}
-.ods-map-wrap{flex:1;position:relative;min-height:0}
+.ods-map-wrap{flex:1;position:relative;min-height:0;width:100%}
 #odsMap{width:100%;height:100%}
 .ods-map-ph{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:10px;background:var(--surface);color:var(--muted);font-size:13px;text-align:center;padding:20px;z-index:5}
 .ods-map-ph svg{opacity:.18}
@@ -397,6 +397,10 @@ input[type=date].di:focus{border-color:var(--accent)}
 
 @keyframes spin{to{transform:rotate(360deg)}}
 @keyframes pulse{0%{transform:scale(1);opacity:.7}50%{transform:scale(1.6);opacity:.3}100%{transform:scale(1);opacity:.7}}
+.ods-tooltip{background:rgba(15,23,42,.9)!important;color:#fff!important;border:none!important;border-radius:6px!important;font-size:12px!important;font-weight:600!important;padding:5px 10px!important;box-shadow:0 4px 14px rgba(0,0,0,.3)!important;white-space:nowrap}
+.ods-tooltip::before{border-top-color:rgba(15,23,42,.9)!important}
+.ods-wrong-badge{display:inline-flex;padding:2px 8px;border-radius:4px;font-size:11px;font-weight:700;background:#fef3c7;color:#d97706;border:1px solid #fde68a}
+.ods-wrong-outlet{border-left:3px solid #dc2626!important}
 </style>
 </head>
 <body>
@@ -640,6 +644,7 @@ input[type=date].di:focus{border-color:var(--accent)}
     <div class="hs" id="hst"></div>
     <div class="hr">
       <div class="fb" id="fnm">No data</div>
+      <button class="nb" id="mapToggleBtn" onclick="toggleAttMap()" style="background:var(--surface);border-color:var(--border);color:var(--muted)">&#128205; Map Off</button>
       <button class="nb" onclick="switchToOds()" style="background:#f5f3ff;border-color:#ddd6fe;color:#7c3aed;font-weight:700">&#127968; ODS</button>
       <button class="nb" id="nfb">&#8593; Upload</button>
     </div>
@@ -655,8 +660,9 @@ input[type=date].di:focus{border-color:var(--accent)}
         <div class="fw">
           <select id="fz"><option value="">All Zones</option></select>
           <select id="fg"><option value="">Grade</option><option>A</option><option>B</option><option>C</option></select>
-          <select id="fs"><option value="">Status</option><option>Active</option><option>Absent</option></select>
+          <select id="fs"><option value="">All Status</option><option>Active</option><option>Absent</option><option>Retailing</option><option>Leave</option></select>
           <select id="fd"><option value="">Designation</option></select>
+          <button id="clearFiltersBtn" onclick="clearAttFilters()" style="width:100%;margin-top:5px;background:var(--rbg);border:1px solid var(--rb);color:var(--red);padding:5px 8px;border-radius:6px;font-size:11px;font-weight:700;cursor:pointer;font-family:inherit;display:none">&#x2715; Clear Filters</button>
         </div>
       </div>
       <div class="el" id="el"></div>
@@ -668,7 +674,7 @@ input[type=date].di:focus{border-color:var(--accent)}
         <div style="font-size:13px;color:var(--dim)">Click a name from the left sidebar</div>
       </div>
     </div>
-    <div class="mp">
+    <div class="mp" id="attMapPanel" style="display:none">
       <div class="mh">
         <div class="mt">
           <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--accent)" stroke-width="2"><polygon points="3 6 9 3 15 6 21 3 21 18 15 21 9 18 3 21"/><line x1="9" y1="3" x2="9" y2="18"/><line x1="15" y1="6" x2="15" y2="21"/></svg>
@@ -1061,6 +1067,7 @@ function imgOk(u){return u&&u!=='--'&&u.indexOf('http')===0;}
 
 /* ===== EXCEL ===== */
 function prg(p,t){document.getElementById('pf').style.width=p+'%';document.getElementById('pt').textContent=t;}
+var setProg=prg; // alias
 function parseXL(ab){
   prg(20,'Sheets padh raha...');
   var wb;
@@ -1656,10 +1663,11 @@ function renderAllPins(){
 function initMap(lat,lng){
   if(!MRD){
     LM=L.map('map',{zoomControl:true,scrollWheelZoom:true}).setView([lat,lng],10);
+    var attGoogle=L.tileLayer('https://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}',{maxZoom:20,subdomains:['mt0','mt1','mt2','mt3'],attribution:'&copy; Google Maps'});
     var attOsm=L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{maxZoom:19,attribution:'&copy; OpenStreetMap'});
     var attSat=L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',{maxZoom:19,attribution:'&copy; Esri'});
-    attOsm.addTo(LM);
-    L.control.layers({'Street Map':attOsm,'Satellite':attSat},{},{position:'topright'}).addTo(LM);
+    attGoogle.addTo(LM);
+    L.control.layers({'Google Street':attGoogle,'Street Map':attOsm,'Satellite':attSat},{},{position:'topright'}).addTo(LM);
     MRD=true;
   }
 }
@@ -1865,23 +1873,26 @@ function odsSetProg(p,t){
 }
 
 function parseOdsFile(file){
-  document.getElementById('odsProgWrap').style.display='block';
-  odsSetProg(5,'File read ho rahi hai...');
+  // Use main upload progress bar when called from main upload screen
+  var useMain=document.getElementById('US').style.display!=='none';
+  if(!useMain&&document.getElementById('odsProgWrap'))document.getElementById('odsProgWrap').style.display='block';
+  function odsOrMain(p,t){if(useMain){prg(p,t);}else{odsSetProg(p,t);}}
+  odsOrMain(5,'Reading file...');
   var isCsv = file.name.toLowerCase().endsWith('.csv');
   var reader = new FileReader();
   reader.onload = function(e){
     try{
-      odsSetProg(30,'Data parse ho raha hai...');
+      odsOrMain(30,'Parsing data...');
       var rows;
       if(isCsv){
         rows = parseCsv(e.target.result);
       } else {
         var wb = XLSX.read(e.target.result,{type:'array',cellDates:true,dense:true});
         var ws = wb.Sheets[wb.SheetNames[0]];
-        odsSetProg(60,'Rows convert ho rahi hain...');
+        odsOrMain(60,'Converting rows...');
         rows = XLSX.utils.sheet_to_json(ws,{defval:''});
       }
-      odsSetProg(80,'Records process ho rahi hain...');
+      odsOrMain(80,'Processing records...');
       ODS_DATA = rows.map(function(r,i){
         var lat=parseFloat(r['Latitude']||r['latitude']||r['Lat']||r['lat']||0);
         var lng=parseFloat(r['Longitude']||r['longitude']||r['Long']||r['lng']||r['Lon']||0);
@@ -1911,7 +1922,7 @@ function parseOdsFile(file){
           hasLocation:!isNaN(lat)&&lat!==0&&!isNaN(lng)&&lng!==0,
         };
       }).filter(function(r){return r.name&&r.name!=='Unknown'||r.hasLocation;});
-      odsSetProg(100,'Done! '+ODS_DATA.length+' outlets loaded');
+      odsOrMain(100,'Done! '+ODS_DATA.length+' outlets loaded');
       setTimeout(function(){odsShowData(file.name);},400);
     } catch(e){
       alert('File parse error: '+e.message);
@@ -1945,10 +1956,16 @@ function parseCsv(text){
 }
 
 function odsShowData(fname){
-  document.getElementById('odsUploadState').style.display='none';
-  document.getElementById('odsDataState').style.display='flex';
-  document.getElementById('odsFnm').style.display='block';
-  document.getElementById('odsFnm').textContent=fname;
+  // Hide upload screen, show ODS screen
+  document.getElementById('US').style.display='none';
+  document.getElementById('odsScreen').style.display='flex';
+  // Switch from upload state to data state
+  var upState=document.getElementById('odsUploadState');
+  var dataState=document.getElementById('odsDataState');
+  if(upState)upState.style.display='none';
+  if(dataState)dataState.style.display='flex';
+  var fnmEl=document.getElementById('odsFnm');
+  if(fnmEl){fnmEl.style.display='block';fnmEl.textContent=fname;}
   buildOdsFilters();
   renderOdsSummary();
   renderOdsList();
@@ -2014,7 +2031,8 @@ function renderOdsList(){
     var active=ODS_SEL&&ODS_SEL===o.idx;
     var imgOk=o.image&&o.image!=='--'&&o.image.indexOf('http')===0;
     var statusColor=o.isBlocked?'oi-blocked':o.verStatus.toLowerCase()==='verified'?'oi-verified':'oi-unverified';
-    return '<div class="oi'+(active?' active':'')+'" data-oidx="'+o.idx+'">'+
+    var wrongStyle=ODS_WRONG_SET&&ODS_WRONG_SET.has(o.idx)?' ods-wrong-outlet':'';
+    return '<div class="oi'+(active?' active':'')+wrongStyle+'" data-oidx="'+o.idx+'">'+
       (imgOk
         ?'<img class="oi-img" src="'+o.image+'" onerror="this.style.display=&quot;none&quot;;this.nextSibling.style.display=&quot;flex&quot;" alt=""><div class="oi-img-ph" style="display:none">&#127968;</div>'
         :'<div class="oi-img-ph">&#127968;</div>')+
@@ -2156,6 +2174,25 @@ function renderOdsDetail(o){
       row('L1 Manager',o.l1Name+' ('+o.l1Code+')') +
     '</div>';
   det.appendChild(card2);
+
+  // ── WRONG SELECTION BUTTON ──────────────────────────────────────────
+  var wrongCard=document.createElement('div');
+  wrongCard.style.cssText='background:var(--white);border:1px solid var(--border);border-radius:var(--r);box-shadow:var(--sh);padding:12px 15px;display:flex;align-items:center;justify-content:space-between;gap:10px';
+  var isWrong=ODS_WRONG_SET.has(o.idx);
+  wrongCard.innerHTML=
+    '<div>'+
+      '<div style="font-size:12px;font-weight:700;color:var(--text)">Outlet Correction</div>'+
+      '<div style="font-size:11px;color:var(--muted);margin-top:2px">Mark if this outlet is wrongly verified or has incorrect data</div>'+
+    '</div>'+
+    '<div style="display:flex;gap:6px">'+
+      '<button id="wrongBtn_'+o.idx+'" onclick="toggleWrong('+o.idx+')" style="'+
+        (isWrong?'background:#fef2f2;border:1px solid #fca5a5;color:#dc2626;':'background:var(--surface);border:1px solid var(--border);color:var(--muted);')+
+        'padding:5px 12px;border-radius:6px;font-size:11px;font-weight:700;cursor:pointer;font-family:inherit">'+
+        (isWrong?'✓ Marked Wrong':'⚑ Mark as Wrong')+
+      '</button>'+
+      '<button onclick="exportWrongOutlets()" style="background:var(--ybg);border:1px solid var(--yb);color:var(--yellow);padding:5px 12px;border-radius:6px;font-size:11px;font-weight:700;cursor:pointer;font-family:inherit">&#8659; Export Wrong</button>'+
+    '</div>';
+  det.appendChild(wrongCard);
 }
 
 function row(k,v,raw){
@@ -2270,7 +2307,10 @@ function addOdsPin(o){
     '</div>';
   wrap.appendChild(body);
 
-  var mrk=L.marker([o.lat,o.lng],{icon:icon,riseOnHover:true}).bindPopup(L.popup({maxWidth:240}).setContent(wrap));
+  var mrk=L.marker([o.lat,o.lng],{icon:icon,riseOnHover:true})
+    .bindPopup(L.popup({maxWidth:240}).setContent(wrap))
+    .bindTooltip(o.name+'<br><span style="color:#64748b;font-size:10px">'+o.erpId+'</span>',
+      {permanent:false,direction:'top',className:'ods-tooltip',offset:[0,-8]});
   mrk.on('click',function(){selectOutlet(o);});
   mrk._odsIdx=o.idx;
   mrk.addTo(ODS_MAP);
@@ -2307,13 +2347,31 @@ document.addEventListener('DOMContentLoaded', function(){
   /* ── Attendance upload ── */
   var fi2=document.getElementById('fi');
   var dz2=document.getElementById('dz');
-  if(fi2)fi2.addEventListener('change',function(e){if(e.target.files[0])loadFile(e.target.files[0]);});
+  if(fi2)fi2.addEventListener('change',function(e){
+    var f=e.target.files[0];if(!f)return;
+    if(typeof UPLOAD_TYPE!=='undefined'&&UPLOAD_TYPE==='ods'){
+      FN=f.name;
+      document.getElementById('upg').style.display='block';
+      prg(5,'Reading ODS file...');
+      parseOdsFile(f);
+    } else {
+      loadFile(f);
+    }
+  });
   if(dz2){
     dz2.addEventListener('dragover',function(e){e.preventDefault();dz2.classList.add('drag');});
     dz2.addEventListener('dragleave',function(){dz2.classList.remove('drag');});
     dz2.addEventListener('drop',function(e){
       e.preventDefault();dz2.classList.remove('drag');
-      if(e.dataTransfer.files[0])loadFile(e.dataTransfer.files[0]);
+      var f=e.dataTransfer.files[0];if(!f)return;
+      if(typeof UPLOAD_TYPE!=='undefined'&&UPLOAD_TYPE==='ods'){
+        FN=f.name;
+        document.getElementById('upg').style.display='block';
+        prg(5,'Reading ODS file...');
+        parseOdsFile(f);
+      } else {
+        loadFile(f);
+      }
     });
   }
 
@@ -2506,20 +2564,20 @@ function showL1Pins(outlets){
     ODS_MAP=L.map('odsMap',{
       zoomControl:true,scrollWheelZoom:true
     }).setView([withLoc[0].lat,withLoc[0].lng],10);
-    var osmLayer=L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
-      maxZoom:19,attribution:'&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>'
-    });
-    var satelliteLayer=L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',{
-      maxZoom:19,attribution:'Tiles &copy; Esri &mdash; Source: Esri, USGS, AGA, GIS User Community'
-    });
-    var streetLayer=L.tileLayer('https://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}',{
+    var odsGoogle=L.tileLayer('https://{s}.google.com/vt/lyrs=m&x={x}&y={y}&z={z}',{
       maxZoom:20,subdomains:['mt0','mt1','mt2','mt3'],attribution:'&copy; Google Maps'
     });
-    osmLayer.addTo(ODS_MAP);
+    var osmLayer=L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',{
+      maxZoom:19,attribution:'&copy; OpenStreetMap'
+    });
+    var satelliteLayer=L.tileLayer('https://server.arcgisonline.com/ArcGIS/rest/services/World_Imagery/MapServer/tile/{z}/{y}/{x}',{
+      maxZoom:19,attribution:'&copy; Esri'
+    });
+    odsGoogle.addTo(ODS_MAP);
     L.control.layers({
+      'Google Street':odsGoogle,
       'Street Map':osmLayer,
-      'Satellite':satelliteLayer,
-      'Google Street':streetLayer
+      'Satellite':satelliteLayer
     },{},{position:'topright'}).addTo(ODS_MAP);
     ODS_MAP_RDY=true;
   }
@@ -2666,25 +2724,9 @@ function backToChoice(){
 }
 
 /* ── OVERRIDE loadFile to route by type ── */
-var _origLoadFile = loadFile;
-loadFile = function(f){
-  if(UPLOAD_TYPE==='ods'){
-    FN=f.name;
-    document.getElementById('upg').style.display='block';
-    setProg(5,'Reading ODS file...');
-    parseOdsFile(f);
-  } else {
-    _origLoadFile(f);
-  }
-};
+/* loadFile routing now in DOMContentLoaded handler */
 
-/* ── OVERRIDE odsShowData to switch to ODS screen ── */
-var _origOdsShowData = odsShowData;
-odsShowData = function(fname){
-  document.getElementById('US').style.display='none';
-  document.getElementById('odsScreen').style.display='flex';
-  _origOdsShowData(fname);
-};
+/* odsShowData now handles US hide directly */
 
 /* ── OVERRIDE startApp to hide upload screen ── */
 var _origStartApp2 = startApp;
@@ -2692,6 +2734,281 @@ startApp = function(){
   document.getElementById('US').style.display='none';
   _origStartApp2();
 };
+
+
+/* ═══════════════════════════════════════
+   ATTENDANCE: MAP TOGGLE + CLEAR FILTERS
+═══════════════════════════════════════ */
+var ATT_MAP_ON = false;
+
+function toggleAttMap(){
+  ATT_MAP_ON = !ATT_MAP_ON;
+  var panel = document.getElementById('attMapPanel');
+  var btn = document.getElementById('mapToggleBtn');
+  if(panel) panel.style.display = ATT_MAP_ON ? 'flex' : 'none';
+  if(btn){
+    btn.textContent = ATT_MAP_ON ? '📍 Map On' : '📍 Map Off';
+    btn.style.background = ATT_MAP_ON ? 'var(--accent-light)' : 'var(--surface)';
+    btn.style.borderColor = ATT_MAP_ON ? 'var(--accent)' : 'var(--border)';
+    btn.style.color = ATT_MAP_ON ? 'var(--accent)' : 'var(--muted)';
+  }
+  if(ATT_MAP_ON && LM) setTimeout(function(){LM.invalidateSize();},200);
+}
+
+function clearAttFilters(){
+  ['fz','fg','fs','fd'].forEach(function(id){
+    var el=document.getElementById(id);
+    if(el)el.value='';
+  });
+  var si=document.getElementById('si');
+  if(si)si.value='';
+  renderList();renderStats();
+  document.getElementById('clearFiltersBtn').style.display='none';
+}
+
+// Show clear button when any filter is active
+function checkAttFilterActive(){
+  var active=['fz','fg','fs','fd'].some(function(id){
+    var el=document.getElementById(id);return el&&el.value;
+  });
+  var si=document.getElementById('si');
+  active=active||(si&&si.value.length>0);
+  var btn=document.getElementById('clearFiltersBtn');
+  if(btn)btn.style.display=active?'block':'none';
+}
+
+/* ═══════════════════════════════════════
+   ODS: EXTRA FILTERS + CLEAR + EXPORT + DASHBOARD
+═══════════════════════════════════════ */
+
+/* Override getFilteredOds to add position + date filters */
+var _origGetFilteredOds2 = getFilteredOds;
+getFilteredOds = function(){
+  var base = _origGetFilteredOds2();
+  // Position filter
+  var pos = document.getElementById('odsPosF') ? document.getElementById('odsPosF').value : '';
+  if(pos) base = base.filter(function(o){
+    return o.l1Pos && o.l1Pos.toUpperCase().indexOf(pos) > -1;
+  });
+  // Verification date filter
+  var vdate = document.getElementById('odsVerDateF') ? document.getElementById('odsVerDateF').value : '';
+  if(vdate){
+    // Convert YYYY-MM-DD to match various date formats in data
+    base = base.filter(function(o){
+      if(!o.verDate||o.verDate==='--')return false;
+      // Try matching by converting both to comparable strings
+      var vd=o.verDate.replace(/[^0-9]/g,'-');
+      var fd=vdate.replace(/[^0-9]/g,'-');
+      // Check if verDate contains the selected year-month-day
+      var parts=vdate.split('-'); // YYYY-MM-DD
+      if(parts.length===3){
+        var dd=parts[2]+'-'+parts[1]+'-'+parts[0]; // DD-MM-YYYY
+        var ddSlash=parts[2]+'/'+parts[1]+'/'+parts[0];
+        return o.verDate===vdate||o.verDate===dd||o.verDate===ddSlash||
+               o.verDate.indexOf(parts[0])>-1&&o.verDate.indexOf(parts[1])>-1&&o.verDate.indexOf(parts[2])>-1;
+      }
+      return o.verDate.indexOf(vdate)>-1;
+    });
+  }
+  return base;
+};
+
+function clearOdsFilters(){
+  var ids=['odsSearch','odsZoneF','odsVerF','odsPosF','odsVerDateF'];
+  ids.forEach(function(id){
+    var el=document.getElementById(id);
+    if(el){el.tagName==='INPUT'?el.value='':el.value='';}
+  });
+  var l1f=document.getElementById('odsL1F');if(l1f)l1f.value='';
+  document.getElementById('odsL1Info').style.display='none';
+  renderOdsList();
+  // Reset map
+  if(ODS_MAP){
+    ODS_MARKERS.forEach(function(m){try{ODS_MAP.removeLayer(m);}catch(e){}});
+    ODS_MARKERS=[];
+    var db=document.getElementById('odsDistBadge');if(db)db.style.display='none';
+    var badge=document.getElementById('odsBadge');
+    if(badge){badge.className='gb gbld';badge.textContent='Select L1 Manager to view pins';}
+  }
+}
+
+/* Export ODS to Excel with ALL columns */
+function downloadOdsExcel(){
+  var data = getFilteredOds();
+  if(!data.length){alert('No data to export');return;}
+  var headers=['Outlet ERP Id','Outlet Name','Owners Name','Owners Number',
+    'Zone','Region','Territory','Beat','Beat ERP Id',
+    'L1 Position Name','L1 Position User Name','L1 Position User ERP Id',
+    'Unit','Latitude','Longitude','Is Blocked',
+    'Outlet Creation Date','Outlet Verification Status','Outlet Verification Date',
+    'Last Physical Visit Date','tagimageurl'];
+  var rows=[headers];
+  data.forEach(function(o){
+    rows.push([
+      o.erpId,o.name,o.owner,o.phone,o.zone,o.region,o.territory,o.beat,o.beatErp,
+      o.l1Pos,o.l1Name,o.l1Code,o.unit,
+      o.hasLocation?o.lat:'',o.hasLocation?o.lng:'',o.isBlocked?'TRUE':'FALSE',
+      o.createdDate,o.verStatus,o.verDate,o.lastVisit,o.image
+    ]);
+  });
+  // Build CSV
+  var csv=rows.map(function(r){
+    return r.map(function(v){
+      var s=String(v===null||v===undefined?'':v);
+      if(s.indexOf(',')>-1||s.indexOf('"')>-1||s.indexOf('\n')>-1)s='"'+s.replace(/"/g,'""')+'"';
+      return s;
+    }).join(',');
+  }).join('\n');
+  var blob=new Blob([csv],{type:'text/csv;charset=utf-8;'});
+  var url=URL.createObjectURL(blob);
+  var a=document.createElement('a');
+  a.href=url;a.download='ODS_Export_'+new Date().toISOString().slice(0,10)+'.csv';
+  a.click();URL.revokeObjectURL(url);
+}
+
+/* Update ODS dashboard stats */
+function updateOdsDashboard(){
+  var all=ODS_DATA;
+  if(!all.length)return;
+  var ver=all.filter(function(o){return o.verStatus.toLowerCase()==='verified'&&!o.isBlocked;}).length;
+  var unver=all.filter(function(o){return o.verStatus.toLowerCase()!=='verified'&&!o.isBlocked;}).length;
+  var blocked=all.filter(function(o){return o.isBlocked;}).length;
+  var gps=all.filter(function(o){return o.hasLocation;}).length;
+  var img=all.filter(function(o){return o.image&&o.image!=='--'&&o.image.indexOf('http')===0;}).length;
+  var zones=[...new Set(all.map(function(o){return o.zone;}).filter(function(z){return z&&z!=='--';}))].length;
+  function upd(id,v){var el=document.getElementById(id);if(el)el.textContent=v;}
+  upd('odsTotalStat',all.length);upd('odsVerStat',ver);upd('odsUnverStat',unver);
+  upd('odsBlockStat',blocked);upd('odsGpsStat',gps);upd('odsImgStat',img);upd('odsZoneStat',zones);
+}
+
+/* Override odsShowData to update dashboard */
+var _prevOdsShowData = odsShowData;
+odsShowData = function(fname){
+  _prevOdsShowData(fname);
+  updateOdsDashboard();
+};
+
+/* Register new filter events in DOMContentLoaded */
+document.addEventListener('DOMContentLoaded',function(){
+  // Attendance filter clear tracking
+  ['fz','fg','fs','fd'].forEach(function(id){
+    var el=document.getElementById(id);
+    if(el)el.addEventListener('change',checkAttFilterActive);
+  });
+  var si2=document.getElementById('si');
+  if(si2)si2.addEventListener('input',checkAttFilterActive);
+
+  // ODS new filters
+  var posF=document.getElementById('odsPosF');
+  if(posF)posF.addEventListener('change',renderOdsList);
+  var vdF=document.getElementById('odsVerDateF');
+  if(vdF)vdF.addEventListener('change',renderOdsList);
+});
+
+
+/* ═══════════════════════════════════════
+   WRONG OUTLET TRACKING + EXPORT
+═══════════════════════════════════════ */
+var ODS_WRONG_SET = new Set();
+
+function toggleWrong(idx){
+  if(ODS_WRONG_SET.has(idx)){
+    ODS_WRONG_SET.delete(idx);
+  } else {
+    ODS_WRONG_SET.add(idx);
+  }
+  // Refresh the button state
+  var btn = document.getElementById('wrongBtn_'+idx);
+  var isWrong = ODS_WRONG_SET.has(idx);
+  if(btn){
+    btn.textContent = isWrong ? '✓ Marked Wrong' : '⚑ Mark as Wrong';
+    btn.style.background = isWrong ? '#fef2f2' : 'var(--surface)';
+    btn.style.borderColor = isWrong ? '#fca5a5' : 'var(--border)';
+    btn.style.color = isWrong ? '#dc2626' : 'var(--muted)';
+  }
+  // Update list item style
+  renderOdsList();
+  // Update dashboard
+  updateOdsDashboardFiltered(getFilteredOds());
+}
+
+function exportWrongOutlets(){
+  var wrongData = ODS_DATA.filter(function(o){ return ODS_WRONG_SET.has(o.idx); });
+  if(!wrongData.length){ alert('No outlets marked as wrong. Use ⚑ Mark as Wrong button first.'); return; }
+  var headers = ['Outlet ERP Id','Outlet Name','Owners Name','Owners Number',
+    'Zone','Region','Territory','Beat','Beat ERP Id',
+    'L1 Position Name','L1 Position User Name','L1 Position User ERP Id',
+    'Unit','Latitude','Longitude','Is Blocked',
+    'Outlet Creation Date','Outlet Verification Status','Outlet Verification Date',
+    'Last Physical Visit Date','tagimageurl','Wrong Reason'];
+  var rows = [headers];
+  wrongData.forEach(function(o){
+    rows.push([o.erpId,o.name,o.owner,o.phone,o.zone,o.region,o.territory,o.beat,o.beatErp,
+      o.l1Pos,o.l1Name,o.l1Code,o.unit,
+      o.hasLocation?o.lat:'',o.hasLocation?o.lng:'',o.isBlocked?'TRUE':'FALSE',
+      o.createdDate,o.verStatus,o.verDate,o.lastVisit,o.image,'Wrongly Verified / Incorrect Data']);
+  });
+  var csv = rows.map(function(r){
+    return r.map(function(v){
+      var s = String(v===null||v===undefined?'':v);
+      if(s.indexOf(',')>-1||s.indexOf('"')>-1) s='"'+s.replace(/"/g,'""')+'"';
+      return s;
+    }).join(',');
+  }).join('\n');
+  var blob = new Blob([csv],{type:'text/csv;charset=utf-8;'});
+  var url = URL.createObjectURL(blob);
+  var a = document.createElement('a');
+  a.href=url; a.download='Wrong_Outlets_'+new Date().toISOString().slice(0,10)+'.csv';
+  a.click(); URL.revokeObjectURL(url);
+}
+
+/* ═══════════════════════════════════════
+   ODS DASHBOARD — FILTER-AWARE
+═══════════════════════════════════════ */
+function updateOdsDashboardFiltered(list){
+  // list = currently filtered outlets
+  if(!list) list = getFilteredOds();
+  var ver   = list.filter(function(o){ return o.verStatus.toLowerCase()==='verified'&&!o.isBlocked; }).length;
+  var unver = list.filter(function(o){ return o.verStatus.toLowerCase()!=='verified'&&!o.isBlocked; }).length;
+  var blk   = list.filter(function(o){ return o.isBlocked; }).length;
+  var gps   = list.filter(function(o){ return o.hasLocation; }).length;
+  var img   = list.filter(function(o){ return o.image&&o.image!=='--'&&o.image.indexOf('http')===0; }).length;
+  var zones = [...new Set(list.map(function(o){return o.zone;}).filter(function(z){return z&&z!=='--';}))].length;
+  var wrong = list.filter(function(o){ return ODS_WRONG_SET.has(o.idx); }).length;
+  function upd(id,v){ var el=document.getElementById(id); if(el) el.textContent=v; }
+  upd('odsTotalStat', list.length);
+  upd('odsVerStat',   ver);
+  upd('odsUnverStat', unver);
+  upd('odsBlockStat', blk);
+  upd('odsGpsStat',   gps);
+  upd('odsImgStat',   img);
+  upd('odsZoneStat',  zones);
+  // Add wrong count to badge if > 0
+  var wBadge = document.getElementById('odsWrongStat');
+  if(wBadge) wBadge.textContent = wrong;
+}
+
+/* ═══════════════════════════════════════
+   PATCH renderOdsList to call dashboard update
+═══════════════════════════════════════ */
+var _baseRenderOdsList = renderOdsList;
+renderOdsList = function(){
+  _baseRenderOdsList();
+  updateOdsDashboardFiltered(getFilteredOds());
+};
+
+/* ═══════════════════════════════════════
+   REGISTER NEW DOM EVENTS
+═══════════════════════════════════════ */
+document.addEventListener('DOMContentLoaded', function(){
+  // ODS position filter
+  var posF = document.getElementById('odsPosF');
+  if(posF) posF.addEventListener('change', renderOdsList);
+
+  // ODS verification date filter
+  var vdF = document.getElementById('odsVerDateF');
+  if(vdF) vdF.addEventListener('change', renderOdsList);
+});
 
 </script>
 
@@ -2740,7 +3057,19 @@ startApp = function(){
       </div>
     </div>
     <!-- DATA STATE (hidden until loaded) -->
-    <div style="display:none;flex:1;flex-direction:inherit;overflow:hidden" id="odsDataState">
+    <div style="display:none;flex-direction:column;flex:1;overflow:hidden" id="odsDataState">
+      <!-- ODS Dashboard Summary Bar -->
+      <div id="odsDashBar" style="background:var(--white);border-bottom:1px solid var(--border);padding:8px 14px;display:flex;gap:4px;flex-shrink:0;overflow-x:auto">
+        <div class="hs" style="white-space:nowrap"><div class="hsv" id="odsTotalStat" style="color:var(--accent)">0</div><div class="hsl">Total Outlets</div></div>
+        <div class="hs" style="white-space:nowrap"><div class="hsv" id="odsVerStat" style="color:var(--green)">0</div><div class="hsl">Verified</div></div>
+        <div class="hs" style="white-space:nowrap"><div class="hsv" id="odsUnverStat" style="color:var(--yellow)">0</div><div class="hsl">Unverified</div></div>
+        <div class="hs" style="white-space:nowrap"><div class="hsv" id="odsBlockStat" style="color:var(--red)">0</div><div class="hsl">Blocked</div></div>
+        <div class="hs" style="white-space:nowrap"><div class="hsv" id="odsGpsStat">0</div><div class="hsl">With GPS</div></div>
+        <div class="hs" style="white-space:nowrap"><div class="hsv" id="odsImgStat">0</div><div class="hsl">With Photo</div></div>
+        <div class="hs" style="white-space:nowrap"><div class="hsv" id="odsZoneStat">0</div><div class="hsl">Zones</div></div>
+        <div class="hs" style="white-space:nowrap"><div class="hsv" id="odsWrongStat" style="color:#dc2626">0</div><div class="hsl">Wrong</div></div>
+      </div>
+      <div style="display:flex;flex:1;overflow:hidden">
       <!-- ODS Sidebar -->
       <aside class="ods-sb">
         <div class="ods-sbh">
@@ -2762,6 +3091,21 @@ startApp = function(){
             <select id="odsL1F" style="width:100%;background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:5px 6px;font-size:11px;font-family:inherit;color:var(--text);outline:none;font-weight:600" title="Filter by L1 Manager — shows their outlets & map pins">
               <option value="">-- Select L1 Manager --</option>
             </select>
+          </div>
+          <div style="margin-top:5px">
+            <select id="odsPosF" style="width:100%;background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:5px 6px;font-size:11px;font-family:inherit;color:var(--text);outline:none" title="Filter by L1 Position">
+              <option value="">All Positions</option>
+              <option value="ASM">ASM</option>
+              <option value="SM">SM</option>
+              <option value="STL">STL</option>
+            </select>
+          </div>
+          <div style="margin-top:5px">
+            <input type="date" id="odsVerDateF" placeholder="Verification Date" style="width:100%;background:var(--surface);border:1px solid var(--border);border-radius:6px;padding:5px 6px;font-size:11px;font-family:inherit;color:var(--text);outline:none" title="Filter by Verification Date">
+          </div>
+          <div style="margin-top:5px;display:flex;gap:4px">
+            <button onclick="clearOdsFilters()" style="flex:1;background:var(--rbg);border:1px solid var(--rb);color:var(--red);padding:5px 6px;border-radius:6px;font-size:11px;font-weight:700;cursor:pointer;font-family:inherit">&#x2715; Clear</button>
+            <button onclick="downloadOdsExcel()" style="flex:1;background:var(--gbg);border:1px solid var(--gb);color:var(--green);padding:5px 6px;border-radius:6px;font-size:11px;font-weight:700;cursor:pointer;font-family:inherit">&#8659; Export</button>
           </div>
           <div id="odsL1Info" style="display:none;margin-top:5px;background:#f5f3ff;border:1px solid #ddd6fe;border-radius:6px;padding:6px 8px;font-size:11px">
             <span id="odsL1Name" style="font-weight:700;color:#7c3aed"></span><br>
